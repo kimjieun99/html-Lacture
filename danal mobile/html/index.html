@@ -31,7 +31,7 @@
     <script src="../js/swiper-bundle.min.js"></script>
   </head>
   <body>
-    <header class="header">
+    <header class="header on">
       <h1 class="logo">
         <a href="" class="logo__link"
           ><img
@@ -432,45 +432,41 @@
     <!-- footer end -->
 
     <script>
-      function plus5(x) {
-        console.log(x + 5);
-      }
-      plus5(9999);
-      function back(money) {
-        console.log(money * 1.045);
-      }
-      //back(30000);
-      //console.log(window.document);
-      //window.alert("아이디가 맞지 않습니다.");
-      //dom (document object model);
+      // 찾아서 이벤트 걸고 제어하면 된다.
 
+      const btnAll = document.querySelector(".btn--all");
       const header = document.querySelector(".header");
-      const gnb = document.querySelector(".gnb");
-      gnb.addEventListener("mouseenter", function () {
-        //console.log("gnb에 마우스 올라감");
-        header.classList.add("on");
-      });
-      gnb.addEventListener("mouseleave", function () {
-        header.classList.remove("on");
-      });
+      const depth01 = document.querySelectorAll(".gnb .gnb__list > li > a");
+      console.log("🚀 ~ file: index.html:381 ~ depth01", depth01);
+      const depth02 = document.querySelectorAll(".gnb .gnb__list > li > .gnb__list--sub");
 
-      const swiper = new Swiper(".platform-swiper", {
-        slidesPerView: "auto",
-        spaceBetween: 50,
-        loop: true,
-        navigation: {
-          nextEl: ".platform-swiper .btn--next",
-          prevEl: ".platform-swiper .btn--prev",
-        },
-      });
+      //if()
+      for (let i = 0; i < 6; i++) {
+        depth01[i].addEventListener("click", function (e) {
+          e.preventDefault();
+          //depth02.classList.toggle("on");
+          console.log(i);
+        });
+      }
 
-      window.addEventListener("scroll", function () {
-        //console.log(window.scrollY);
-        if (window.scrollY > 0) {
-          header.classList.add("scroll");
+      // depth01.addEventListener("click", function (e) {
+      //   e.preventDefault();
+      //   depth02.classList.toggle("on");
+      //   //return false;
+      // });
+
+      btnAll.addEventListener("click", function () {
+        // console.log("click 했음");
+        const isContains = header.classList.contains("on");
+        if (isContains) {
+          header.classList.remove("on");
         } else {
-          header.classList.remove("scroll");
+          header.classList.add("on");
         }
+        //header.classList.toggle("on");
+        //console.log(isContains);
+        //header.classList.add("on");
+        //header.classList.remove("on");
       });
     </script>
   </body>
