@@ -43,11 +43,15 @@
     <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/aos.css" />
+    <link rel="stylesheet" href="../css/splitting-cells.css">
     <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <script src="../js/aos.js"></script>
     <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/splitting.min.js"></script>
+    <script src="../js/gsap/gsap.min.js"></script>
+    <script src="../js/main.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -133,27 +137,26 @@
     <main class="main">
       <section class="visual">
         <h2 class="hidden">main video</h2>
-        <video
+        <!-- <video
           src="../video/cargo_color.mp4"
           autoplay
           muted
           loop
           class="visual__video"
-        ></video>
-        <div class="visual__txt">
-          <h3
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-          >
+        ></video> -->
+        <div class="visual__list">
+          <ul class="swiper-wrapper">
+            <li class="visual01 swiper-slide"></li>
+            <li class="visual02 swiper-slide"></li>
+            <li class="visual03 swiper-slide"></li>
+          </ul>
+        </div>
+        <div class="pagination"></div>
+        <div class="visual__txt" data-splitting>
+          <h3>
             PORT-TO-PORT <br />
             AI PLATFORM COMPANY
           </h3>
-          <div
-            data-aos="fade-left"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-          >
             <p>
               선박과 항만의 연결, 그리고 자율운항선박이 나아갈 길을 <br />
               씨드로닉스는 Data-driven solution으로 이끌어 갑니다.
@@ -466,44 +469,9 @@
     <button class="btn-top">
       <span class="material-icons"> north </span>
     </button>
-
     <script>
-      AOS.init({
-        duration: 1000,
-        delay: 500,
-      });
+      Splitting();
 
-      const swiper = new Swiper(".news-banner", {
-        slidePerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        /*Navigation arrows*/
-        navigation: {
-          nextEl: ".news-banner .btn--next",
-          prevEl: ".news-banner .btn--prev",
-        },
-      });
-
-      const header = document.querySelector(".header");
-      const btnTop = document.querySelector(".btn-top");
-      btnTop.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      window.addEventListener("scroll", function (e) {
-        console.log(window.scrollY);
-        if (window.scrollY > 0) {
-          header.classList.add("on");
-          btnTop.classList.add("on");
-        } else {
-          header.classList.remove("on");
-          btnTop.classList.remove("on");
-        }
-      });
-
-      /*window.addEventListener("click", function () {
-      alert("너가 클릭했냐?");
-      });*/
     </script>
   </body>
 </html>

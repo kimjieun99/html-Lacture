@@ -1,0 +1,350 @@
+.btn {
+  /* flex를 적용하지만 글자처럼 취급한다.  inline-block */
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 20px;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  border-radius: 5px;
+  /* transition: background-color 0.25s ease, color 0.25s ease; */
+  transition: all 0.25s ease;
+}
+.btn--white {
+  border-color: #fff;
+  color: #fff;
+}
+.btn--round {
+  border-radius: 100px;
+}
+.btn span {
+  transition: transform 0.25s ease;
+}
+.btn:hover {
+  background-color: var(--blue);
+  color: #fff;
+}
+.btn:not(.btn--fixed):hover span {
+  /* position: relative;
+  left: 20px; css3 */
+  transform: translateX(10px);
+}
+.container {
+  width: 1400px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+strong {
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--h2);
+  line-height: 1.25;
+  margin-bottom: 30px;
+  /* font-size: */
+}
+.visual:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+.visual__video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.visual__txt {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 50px;
+  font-size: 20px;
+  /* top,left,bottom,right */
+}
+.visual__txt h3 {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 50px;
+}
+.visual__txt p {
+  margin-bottom: 30px;
+}
+.section {
+  padding: 100px 0;
+}
+.gray {
+  background-color: var(--gray);
+}
+.section .container {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+  align-items: center;
+}
+.about .about__txt p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* color  #ff00ff  / rgb(255,0 255)  / rgba(255,255,255,0.5) */
+/* id 100, class 10, tag 1 */
+
+.about .about__img {
+  width: 50%;
+}
+.about .about__img img {
+  width: 100%;
+}
+.products .container {
+  flex-direction: column;
+}
+.products .products-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.products .products-title h2 {
+  font-size: var(--h2);
+  margin: 10px;
+}
+.products .products-title p {
+  font-size: 20px;
+}
+.products .products-banner {
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-between;
+}
+.products .products-banner a {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: calc(50% - 10px);
+}
+
+/* pseudo element */
+
+.products .products-banner a:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  transition: background-color 0.25s ease;
+}
+
+/* element의 쌓이는 순서 
+1. 위에서 아래로 아래에 있을 수록 위로 올라간다. 
+2. 만약 position 속성이 있으면 태그의 순서와 상관없이 위로 올라간다.
+3. 쌓이는 순서는 z-index로 바꿀 수 있다.
+*/
+
+.products .products-banner a:hover:before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.products .products-banner a img {
+  width: 100%;
+  height: 550.01px;
+  object-fit: cover;
+}
+.products .products-banner a .products-banner__title {
+  position: absolute;
+  color: #fff;
+  left: 30px;
+  top: 30px;
+  font-size: 20px;
+}
+.products .products-banner a .products-banner__title h3 {
+  font-size: var(--h2);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.products .products-banner a .products-banner__title p {
+  font-size: var(--h3);
+  margin-top: 30px;
+  align-items: center;
+}
+.products .products-banner a .more {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  color: #fff;
+  font-size: 83px;
+  transition: all ease 1s;
+}
+.products .products-banner a .more:hover {
+  transform: rotate(90deg);
+}
+.banner {
+  background: rgb(4, 63, 189);
+  background: linear-gradient(90deg, rgba(4, 63, 189, 1) 0%, rgba(0, 31, 97, 1) 100%);
+  color: #fff;
+}
+.banner h2 {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+.tech .container {
+  gap: 20px;
+  align-items: start;
+}
+.tech .container .tech-item {
+  width: 33.33%;
+}
+.tech .container .tech-banner {
+  padding-top: 85px;
+}
+.tech .container .tech-title p {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+.tech .container .tech-banner a {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+}
+.tech .container .tech-banner a:hover:before{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.tech .container .tech-banner a:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  transition: background-color 0.25s ease;
+}
+.tech .container .tech-banner a .tech-banner__title {
+  position: absolute;
+  color: #fff;
+  left: 30px;
+  right: 30px;
+  top: 30px;
+}
+.tech .container .tech-banner a .tech-banner__title h3 {
+  font-size: 44px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.tech .container .tech-banner a .tech-banner__title p {
+  font-size: 24px;
+}
+.tech .container .tech-banner img {
+  width: 100%;
+  height: 600px;
+}
+.tech .tech-banner a .more {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  color: #fff;
+  font-size: 83px;
+  transition: all ease 1s;
+}
+.tech .tech-banner a .more:hover {
+  transform: rotate(90deg);
+}
+.investors {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../images/main/main-investors.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.investors .container {
+  flex-direction: column;
+  align-items: start;
+  color: #fff;
+}
+.investors .container h2 {
+  margin-bottom: 50px;
+}
+.investors .investors__list {
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(10px);
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.investors .investors__list li > a > img {
+  padding: 16px;
+}
+.investors .investors__list li {
+  width: 25%;
+  filter: grayscale(1);
+  transform: all 0.5s ease;
+}
+.investors .investors__list li:hover {
+  filter: grayscale(0);
+}
+.news {
+  overflow: hidden;
+}
+.news .container {
+  flex-direction: column;
+  align-items: start;
+}
+.news .news-title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.news .news-title .title{
+  text-align: center;
+}
+.news .news-banner {
+  width: 30%;
+  position: relative;
+}
+.news .news-banner .btn {
+  position: absolute;
+  top: 75%;
+  transform: translateY(-80px);
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+}
+.news .news-banner .btn--prev {
+  left: -30px;
+}
+.news .news-banner .btn--next {
+  right: -1000px;
+}
+.news .news__img {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.news .news__img img {
+  width: 100%;
+}
+.news .news__img .sticker {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: #fff;
+  background-color: var(--red);
+  border-radius: 5px;
+  padding: 10px;
+}
+.news .news__txt h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0;
+}

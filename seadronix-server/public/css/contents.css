@@ -1,0 +1,22 @@
+.sub-header {
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    background-color: #f00;
+    background-size: cover;
+}
+.sub-header .sub-title {
+    font-size: 64px;
+    font-weight: 700;
+    width: 1400px;
+    margin-bottom: 50px;
+    color: #fff;
+    text-transform: uppercase;
+}
+#vision {
+    background-image: url(../images/sub/company-bg_re.jpg);
+}
+#location {
+    background-image: url(../images/sub/technology-bg_re.jpg);
+}

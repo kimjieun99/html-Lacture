@@ -1,0 +1,28 @@
+.footer {
+  background-color: darken($blue, 20);
+  color: #fff;
+  padding: 20px;
+  &__item {
+    margin-top: 50px;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    dl {
+      display: flex;
+      margin-top: 10px;
+      dt {
+        width: 70px;
+      }
+    }
+  }
+  &-logo {
+    height: 40px;
+  }
+  &-copyright {
+    margin-top: 50px;
+    text-align: center;
+  }
+}
